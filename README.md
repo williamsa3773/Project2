@@ -43,20 +43,24 @@ https://imgur.com/a/CWmSaxn
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
+| Part1 | H | |  |  |
 | In app making api call | H | 1.5hrs | 0hrs | 0hrs |
 | Creating form and connecting api call| M | 1.5hrs | 0hrs | 0hrs |
 | creating nav | L | 1hr | 0hrs | 0hrs |
 | Initial CSS | L | 2hrs | 0hrs | 0hrs |
+| Part2 | H | |  |  |
 | Generate Random Word | H | 2hr | 0hrs | 0hrs |
 | Setting time and generating countdown timer | H | 2hr | 0hrs | 0hrs |
 | Creating random word and generating data | H | 2hr | 0hrs | 0hrs |
 | 2nd Initial Css | L | 12hr | 0hrs | 0hrs |
+| Part3 | H | |  |  |
 | Generating button and randomizing a word | H | 2hr | 0hrs | 0hrs |
 | Creating Li for scrambled words | L | 1hr | 0hrs | 0hrs |
 | Creating Li fo picking letters | L | 2hr | 0hrs | 0hrs |
 | Creating lights and conditions | H | 3hr | 0hrs | 0hrs |
 | Generating data field | L | 1hr | 0hrs | 0hrs |
 | 3rd class | L | 2hr | 0hrs | 0hrs |
+| Part4 | H | |  |  |
 | Final css | H| 4hr | 0hrs | 0hrs |
 Total: 30hrs
 
