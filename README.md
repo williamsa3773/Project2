@@ -66,8 +66,7 @@ Total: 30hrs
 
 
 ## Additional Libraries
-react-router-dom
-axios
+react-router-dom, axios
 
 ## Code Snippet
 
