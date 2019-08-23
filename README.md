@@ -52,7 +52,7 @@ https://imgur.com/a/CWmSaxn
 | Generate Random Word | H | 2hr | 0hrs | 0hrs |
 | Setting time and generating countdown timer | H | 2hr | 0hrs | 0hrs |
 | Creating random word and generating data | H | 2hr | 0hrs | 0hrs |
-| 2nd Initial Css | L | 12hr | 0hrs | 0hrs |
+| 2nd Initial Css | L | 2hr | 0hrs | 0hrs |
 | Part3 | H | |  |  |
 | Generating button and randomizing a word | H | 2hr | 0hrs | 0hrs |
 | Creating Li for scrambled words | L | 1hr | 0hrs | 0hrs |
