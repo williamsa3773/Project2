@@ -1,3 +1,39 @@
+* {
+  background-color: grey
+}
+
+.finder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.word1 {
+  text-transform: uppercase;
+}
+.sense1 {
+  text-transform: uppercase;
+  color: white;
+}
 /* .App {
   text-align: center;
 }
