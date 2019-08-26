@@ -5,7 +5,7 @@ Creating a dictionary app that would allow users to search words at their leisur
 
 ## Wireframes
 
-Link to wireframes showing for my application and Hierachy
+Link to wireframes showing for my application and Hierarchy
 https://imgur.com/a/CWmSaxn
 
 ## API
