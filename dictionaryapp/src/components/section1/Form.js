@@ -1,18 +1,36 @@
 import React from 'react'
 
-function Form(props) {
-  return (
-    <form>
-      <input
-      placeholder="search for a word"
-      type='text'
-      onChange={props.handleChange}
-      />
-      <input
-      type='submit'
-      value='Computing'
-      />
-    </form>
-  )
+class Form extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      word: 'Software'
+    }
+  }
+  handleChange = (e) => {
+    let word = e.target.value
+    this.setState(prevState => ({
+      word: word
+    }))
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+  }
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <input
+        placeholder="search for a word"
+        type='text'
+        onChange={this.handleChange}
+        />
+        <input
+        type='submit'
+        value='Computing'
+        />
+      </form>
+    )
+  }
 }
 export default Form
