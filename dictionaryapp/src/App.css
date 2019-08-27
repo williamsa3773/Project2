@@ -27,12 +27,16 @@
   flex-direction: row;
 }
 
-.word1 {
+.word {
   text-transform: uppercase;
 }
-.sense1 {
+.sense {
   text-transform: uppercase;
   color: white;
+}
+.def {
+  display: flex;
+  justify-content: center;
 }
 /* .App {
   text-align: center;

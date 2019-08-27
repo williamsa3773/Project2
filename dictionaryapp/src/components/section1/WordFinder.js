@@ -26,7 +26,6 @@ class WordFinder extends React.Component {
     this.setState({
       dictData: dictData
     })
-    
   }
 
   thesApiCall = async () => {
@@ -48,7 +47,6 @@ class WordFinder extends React.Component {
 
   componentDidMount() {
     this.dictApiCall()
-    this.thesApiCall()
   }
   handleSubmit = (word) => {
     this.setState(prevState => ({
@@ -57,33 +55,34 @@ class WordFinder extends React.Component {
   }
 
   render() {
-    let list = () => {
-      console.log('this is this inside of list', this)
-      if(!this.state.dictData.length) {
-        return (
-        <p>Currently proccessing data</p>
+    let wordData = this.state.dictData.map((d,i) => {
+      return (
+        <div>
+          <div className='title'>
+            <div className='word'>
+              <h1>{d.word} </h1>
+            </div>
+            <div className='sense'>
+              <h2>({d.sense})</h2>
+            </div>
+          </div>
+          <div className='def'>
+            <ul>{d.def.map((def, ind) => {
+              return (
+                <li key={ind}>{def}</li>
+              )
+            })}</ul>
+          </div>
+        </div>
       )
-    }
-      this.state.dictData.map( (d,i) => {
-        return d.def.map( (def,ind) => {
-          return <li key={ind}>{def}</li>})})}
+    })
     return (
       <div className='finder'>
         <div className='form'>
           <Form onSubmit={this.handleSubmit}/>
         </div>
         <div className='data'>
-          <div className='title'>
-            <div className='word1'>
-              <h1>{this.state.dictData.word}</h1>
-            </div>
-            <div className='sense1'>
-              <h2> {this.state.dictData.sense}</h2>
-            </div>
-          </div>
-          <div className='def1'>
-            {list()}
-          </div>
+        {wordData}
         </div>
       </div>
     )
