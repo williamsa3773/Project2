@@ -46,10 +46,10 @@ https://imgur.com/a/CWmSaxn
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Part1 | H | |  |  |
-| In app making api call | H | 1.5hrs | 0hrs | 0hrs |
-| Creating form and connecting api call| M | 1.5hrs | 0hrs | 0hrs |
+| In app making api call | H | 1.5hrs | 2hrs | 2hrs |
+| Creating form and connecting api call| M | 1.5hrs | 2hrs | 2hrs |
 | creating nav | L | 1hr | 0hrs | 0hrs |
-| Initial CSS | L | 2hrs | 0hrs | 0hrs |
+| Initial CSS | L | 2hrs | .75hrs | .75hrs |
 | Part2 | H | |  |  |
 | Generate Random Word | H | 2hr | 0hrs | 0hrs |
 | Setting time and generating countdown timer | H | 2hr | 0hrs | 0hrs |
