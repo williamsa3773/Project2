@@ -26,11 +26,13 @@ class WordFinder extends React.Component {
     this.setState({
       dictData: dictData
     })
+    
   }
 
   thesApiCall = async () => {
     const thesUrl = `https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${this.state.word}?key=a9a12465-41f6-45eb-8960-4783f16d1b54`
     const thesResponse = await axios.get(thesUrl)
+    console.log(thesResponse)
     const thesData = thesResponse.data.map( (def, ind) => {
       const data = {
         ant: def.ants,
@@ -41,6 +43,7 @@ class WordFinder extends React.Component {
     this.setState({
       thesData: thesData
     })
+
   }
 
   componentDidMount() {
@@ -50,21 +53,20 @@ class WordFinder extends React.Component {
   handleSubmit = (word) => {
     this.setState(prevState => ({
       word: word
-    }), () => this.dictApiCall(), this.thesApiCall())
+    }), () => this.dictApiCall())
   }
 
   render() {
-    console.log('this is dictData', this.state.dictData)
-    if(!this.state.dictData.length) {
-      return <div>Loading</div>
+    let list = () => {
+      console.log('this is this inside of list', this)
+      if(!this.state.dictData.length) {
+        return (
+        <p>Currently proccessing data</p>
+      )
     }
-    let newDefs = []
-    let defs = this.state.dictData.map( d => {
-      return d.def.map( def => {
-            return <p>{def}</p>
-      })
-
-    })
+      this.state.dictData.map( (d,i) => {
+        return d.def.map( (def,ind) => {
+          return <li key={ind}>{def}</li>})})}
     return (
       <div className='finder'>
         <div className='form'>
@@ -80,7 +82,7 @@ class WordFinder extends React.Component {
             </div>
           </div>
           <div className='def1'>
-            {defs}
+            {list()}
           </div>
         </div>
       </div>
