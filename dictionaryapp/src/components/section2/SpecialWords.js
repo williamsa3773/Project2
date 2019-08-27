@@ -1,11 +1,13 @@
 import React from 'react'
-import axios from 'axios'
+import WordOfTheDay from './WordOfTheDay'
+import RandomWord from './RandomWord'
 
 class SpecialWord extends React.Component {
   render() {
     return (
       <div>
-        <p>This is temporary text</p>
+        <WordOfTheDay />
+        <RandomWord />
       </div>
     )
   }
