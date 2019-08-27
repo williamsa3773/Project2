@@ -1,6 +1,5 @@
 import React from 'react'
 import axios from 'axios'
-import Timer from './Timer'
 import wordArray from './wordArray'
 
 class WordOfTheDay extends React.Component {
@@ -9,13 +8,35 @@ class WordOfTheDay extends React.Component {
     this.state = {
       Rand: wordArray,
       Word: wordArray[Math.floor(Math.random() * wordArray.length)],
-      dictData: []
+      dictData: [],
+      count: 3600
     }
   }
 
-  dictApiCall = async () => {
-    const dictUrl = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${this.state.Word}?key=097cb478-2f07-4d94-9e03-739c1ff1d6ab`
-    console.log(dictUrl)
+  decreaseTime = () => {
+    if(this.state.count === 0) {
+      const word = wordArray[Math.floor(Math.random() * wordArray.length)]
+      this.dictApiCall(word)
+    }
+    this.setState(prevState => ({
+      count: prevState.count -1
+    }), () => this.reset())}
+
+  tick() {
+    setInterval(this.decreaseTime, 1000)
+
+  }
+
+  reset() {
+    if(this.state.count === -1) {
+      this.setState({
+        count: 10
+      })
+    }
+  }
+
+  dictApiCall = async (word) => {
+    const dictUrl = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=097cb478-2f07-4d94-9e03-739c1ff1d6ab`
     const dictResponse = await axios.get(dictUrl)
     const dictData = dictResponse.data.map( (d, i) => {
       const data = {
@@ -31,7 +52,8 @@ class WordOfTheDay extends React.Component {
   }
 
   componentDidMount() {
-    this.dictApiCall()
+    this.dictApiCall(this.state.Word)
+    this.tick()
   }
 
   render() {
@@ -56,10 +78,9 @@ class WordOfTheDay extends React.Component {
         </div>
       )
     })
-  
     return (
       <div>
-        <Timer />
+        {this.state.count}
         {wordData}
       </div>
     )
