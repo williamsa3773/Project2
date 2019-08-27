@@ -1,0 +1,3 @@
+const wordArray = ['advesary','apathetic','cogent','convoluted','deferential','didactic','dubios','ebullient','eclectic','esoteric','fastidious','garrulous','gregarious','hackneyed','imperious','laudatory','mollify','obdurate','preclude','reticent','spurious','tenacious','verbose','wistful','bellicose','confluence','convival','deportment','diaspora','efficacy','ennui','ensconce','ephermeral','erudition','extamporaneous','ignominy','milieu','penultimate','quagmire','quandary','sedentary','serendipity','tantamount','termulous','adulation','banal','dichotomy','obfuscate']
+
+export default wordArray
