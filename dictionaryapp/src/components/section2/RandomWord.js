@@ -38,7 +38,7 @@ class RandomWord extends React.Component {
   render() {
     let wordData = this.state.dictData.map((d,i) => {
       return (
-        <div>
+        <div className='container'>
           <div className='title'>
             <div className='word'>
               <h1>{d.word} </h1>
@@ -58,14 +58,16 @@ class RandomWord extends React.Component {
       )
     })
     return (
-      <div>
+      <div className='finder'>
         <form onSubmit={this.handleSubmit}>
           <input
           type='submit'
           value='Randomizing'
           />
         </form>
-        {wordData}
+        <div>
+          {wordData}
+        </div>
       </div>
     )
   }

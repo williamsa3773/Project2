@@ -5,7 +5,7 @@ import RandomWord from './RandomWord'
 class SpecialWord extends React.Component {
   render() {
     return (
-      <div>
+      <div className='section2'>
         <WordOfTheDay />
         <RandomWord />
       </div>
