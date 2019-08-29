@@ -64,7 +64,7 @@ class RandomWord extends React.Component {
             />
           </form>
         </div>
-        {wordData}
+        {wordData[0]}
       </>
     )}}
 

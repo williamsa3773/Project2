@@ -84,7 +84,7 @@ class WordOfTheDay extends React.Component {
       <div className='timer'>
         {this.state.count}
       </div>
-        {wordData}
+        {wordData[0]}
       </>
     )
   }

@@ -7,7 +7,7 @@ class WordFinder extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      word: 'Software',
+      word: 'software',
       dictData: [],
       thesData: []
     }
@@ -56,25 +56,24 @@ class WordFinder extends React.Component {
   }
 
   render() {
-    let wordData = this.state.dictData.map((d,i) => {
-     return (
-       <>
-         <div className='word'>
-           <h1>{d.word} </h1>
-         </div>
-         <div className='sense'>
-           <h2>({d.sense})</h2>
-         </div>
-         <div className='def'>
-           <ul>{d.def.map((def, ind) => {
-             return (
-               <li key={ind}>{def}</li>
-             )
-           })}</ul>
-         </div>
-      </>
-     )
-   })
+      let wordData = this.state.dictData.map((d,i) => {
+       return (
+         <>
+           <div className='word'>
+             <h1>{d.word}</h1>
+           </div>
+           <div className='sense'>
+             <h2>({d.sense})</h2>
+           </div>
+           <div className='def'>
+             <ul>{d.def.map((def, ind) => {
+               return (
+                 <li key={ind}>{def}</li>
+               )
+             })}</ul>
+           </div>
+        </>
+       )})
    return (
      <div className='container'>
       <div className='section1'>
@@ -84,7 +83,7 @@ class WordFinder extends React.Component {
          <div className='form'>
            <Form onSubmit={this.handleSubmit}/>
          </div>
-         {wordData}
+         {wordData[0]}
       </div>
      </div>
    )
