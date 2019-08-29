@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import Form from  './Form'
+import Section1 from './Section1.css'
 
 class WordFinder extends React.Component {
   constructor(props) {
@@ -56,37 +57,38 @@ class WordFinder extends React.Component {
 
   render() {
     let wordData = this.state.dictData.map((d,i) => {
-      return (
-        <div>
-          <div className='title'>
-            <div className='word'>
-              <h1>{d.word} </h1>
-            </div>
-            <div className='sense'>
-              <h2>({d.sense})</h2>
-            </div>
-          </div>
-          <div className='def'>
-            <ul>{d.def.map((def, ind) => {
-              return (
-                <li key={ind}>{def}</li>
-              )
-            })}</ul>
-          </div>
+     return (
+       <>
+         <div className='word'>
+           <h1>{d.word} </h1>
+         </div>
+         <div className='sense'>
+           <h2>({d.sense})</h2>
+         </div>
+         <div className='def'>
+           <ul>{d.def.map((def, ind) => {
+             return (
+               <li key={ind}>{def}</li>
+             )
+           })}</ul>
+         </div>
+      </>
+     )
+   })
+   return (
+     <div className='container'>
+      <div className='section1'>
+        <div className='header'>
+          <p>Sample text here</p>
         </div>
-      )
-    })
-    return (
-      <div className='finder'>
-        <div className='form'>
-          <Form onSubmit={this.handleSubmit}/>
-        </div>
-        <div className='data'>
-        {wordData}
-        </div>
+         <div className='form'>
+           <Form onSubmit={this.handleSubmit}/>
+         </div>
+         {wordData}
       </div>
-    )
-  }
+     </div>
+   )
+ }
 }
 
 export default WordFinder

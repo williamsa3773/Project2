@@ -9,15 +9,20 @@ function App() {
   return (
     <div className='App'>
       <div className='nav'>
-        <Link to='/finder'>Word Search</Link>
-        <Link to='/random'>Temporary Text</Link>
-        <Link to='/unscramble'>Scramble</Link>
-        <Switch>
-          <Route path='/finder' component={WordFinder} />
-          <Route path='/random' component={SpecialWords} />
-          <Route path='/unscramble' component={WordGames} />
-        </Switch>
+        <Link to='/finder'>Searching</Link>
+        <Link to='/random'>Special</Link>
+        <Link to='/unscramble'>Underconstruction</Link>
       </div>
+      <Switch>
+        <Route path='/finder' component={WordFinder} />
+        <Route path='/random' component={SpecialWords} />
+        <Route path='/unscramble' component={WordGames} />
+      </Switch>
+      <footer>
+        <div className='footer'>
+          <p>temporary text here</p>
+        </div>
+      </footer>
     </div>
   )
 }

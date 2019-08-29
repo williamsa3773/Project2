@@ -30,7 +30,7 @@ class WordOfTheDay extends React.Component {
   reset() {
     if(this.state.count === -1) {
       this.setState({
-        count: 10
+        count: 3600
       })
     }
   }
@@ -59,30 +59,33 @@ class WordOfTheDay extends React.Component {
   render() {
     let wordData = this.state.dictData.map((d,i) => {
       return (
-        <div>
-          <div className='title'>
-            <div className='word'>
-              <h1>{d.word} </h1>
-            </div>
-            <div className='sense'>
-              <h2>({d.sense})</h2>
-            </div>
+        <>
+          <div className='word1'>
+            <h1>{d.word} </h1>
           </div>
-          <div className='def'>
+          <div className='sense1'>
+            <h2>({d.sense})</h2>
+          </div>
+          <div className='def1'>
             <ul>{d.def.map((def, ind) => {
               return (
                 <li key={ind}>{def}</li>
               )
             })}</ul>
           </div>
-        </div>
+        </>
       )
     })
     return (
-      <div>
-        {this.state.count}
-        {wordData}
+      <>
+      <div className='header2'>
+        <p>second header</p>
       </div>
+      <div className='timer'>
+        {this.state.count}
+      </div>
+        {wordData}
+      </>
     )
   }
 }

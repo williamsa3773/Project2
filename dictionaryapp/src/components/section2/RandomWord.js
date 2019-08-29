@@ -9,8 +9,7 @@ class RandomWord extends React.Component {
       Rand: wordArray,
       Word: [],
       dictData: []
-    }
-  }
+    }}
 
   dictApiCall = async () => {
     const dictUrl = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${this.state.Word}?key=097cb478-2f07-4d94-9e03-739c1ff1d6ab`
@@ -25,52 +24,48 @@ class RandomWord extends React.Component {
     })
     this.setState({
       dictData: dictData
-    })
-  }
+    })}
 
   handleSubmit = (e) => {
     e.preventDefault()
     this.setState(prevState => ({
       Word: wordArray[Math.floor(Math.random() * wordArray.length)]
-    }), () => this.dictApiCall())
-  }
+    }), () => this.dictApiCall())}
 
   render() {
     let wordData = this.state.dictData.map((d,i) => {
       return (
-        <div className='container'>
-          <div className='title'>
-            <div className='word'>
-              <h1>{d.word} </h1>
-            </div>
-            <div className='sense'>
-              <h2>({d.sense})</h2>
-            </div>
+        <>
+          <div className='word2'>
+            <h1>{d.word} </h1>
           </div>
-          <div className='def'>
+          <div className='sense2'>
+            <h2>({d.sense})</h2>
+          </div>
+          <div className='def2'>
             <ul>{d.def.map((def, ind) => {
               return (
                 <li key={ind}>{def}</li>
-              )
-            })}</ul>
+              )})}
+            </ul>
           </div>
-        </div>
-      )
-    })
+        </>
+      )})
     return (
-      <div className='finder'>
-        <form onSubmit={this.handleSubmit}>
-          <input
-          type='submit'
-          value='Randomizing'
-          />
-        </form>
-        <div>
-          {wordData}
+      <>
+        <div className='header3'>
+          <p>header 3</p>
         </div>
-      </div>
-    )
-  }
-}
+        <div className='form1'>
+          <form onSubmit={this.handleSubmit}>
+            <input
+            type='submit'
+            value='Randomizing'
+            />
+          </form>
+        </div>
+        {wordData}
+      </>
+    )}}
 
 export default RandomWord
