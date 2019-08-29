@@ -1,3 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Caveat|Gloria+Hallelujah|Indie+Flower|Permanent+Marker|Shadows+Into+Light|Tangerine&display=swap');
+
+/* font-family: 'Tangerine', cursive;
+font-family: 'Gloria Hallelujah', cursive;
+font-family: 'Indie Flower', cursive;
+font-family: 'Caveat', cursive;
+font-family: 'Shadows Into Light', cursive;
+font-family: 'Amatic SC', cursive;
+font-family: 'Permanent Marker', cursive; */
+a {
+  margin: 7px;
+}
+
+ul {
+  font-size: 20px;
+  font-weight: 400px;
+  font-family: 'Indie Flower', cursive;
+}
+
 .App {
   display: grid;
   grid-template-columns: .25fr 1.5fr .25fr;
@@ -9,6 +28,7 @@
   grid-row: 1/4;
   text-decoration: none;
   text-align: center;
+  font-family: 'Gloria Hallelujah', cursive;
 }
 
 .container {

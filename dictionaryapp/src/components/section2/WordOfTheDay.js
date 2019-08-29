@@ -9,29 +9,7 @@ class WordOfTheDay extends React.Component {
       Rand: wordArray,
       Word: wordArray[Math.floor(Math.random() * wordArray.length)],
       dictData: [],
-      count: 3600
-    }
-  }
-
-  decreaseTime = () => {
-    if(this.state.count === 0) {
-      const word = wordArray[Math.floor(Math.random() * wordArray.length)]
-      this.dictApiCall(word)
-    }
-    this.setState(prevState => ({
-      count: prevState.count -1
-    }), () => this.reset())}
-
-  tick() {
-    setInterval(this.decreaseTime, 1000)
-
-  }
-
-  reset() {
-    if(this.state.count === -1) {
-      this.setState({
-        count: 3600
-      })
+      date: new Date()
     }
   }
 
@@ -51,10 +29,34 @@ class WordOfTheDay extends React.Component {
     })
   }
 
+  timerId() {
+
+    setInterval( () => this.tick(), 1000)
+  }
+
+  tick() {
+    this.setState({
+      date: new Date()
+    }, this.reset())
+  }
+
+  reset() {
+    if (this.state.date.getSeconds() === 0) {
+      const word = wordArray[Math.floor(Math.random() * wordArray.length)]
+      console.log(word)
+      this.dictApiCall(word)
+    }
+  }
+
   componentDidMount() {
     this.dictApiCall(this.state.Word)
-    this.tick()
+    this.timerId()
   }
+
+  componentWillUnmount() {
+    clearInterval(this.TimerId)
+  }
+
 
   render() {
     let wordData = this.state.dictData.map((d,i) => {
@@ -79,10 +81,10 @@ class WordOfTheDay extends React.Component {
     return (
       <>
       <div className='header2'>
-        <p>second header</p>
+        <h1>Word of the hour</h1>
       </div>
       <div className='timer'>
-        {this.state.count}
+        {this.state.date.toLocaleTimeString()}
       </div>
         {wordData[0]}
       </>

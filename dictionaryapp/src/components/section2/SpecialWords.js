@@ -9,7 +9,7 @@ class SpecialWord extends React.Component {
       <div className='container'>
         <div className='section2'>
           <div className='header1'>
-            <p>sample text here</p>
+            <h1>Special Words</h1>
           </div>
           <WordOfTheDay />
           <RandomWord />
