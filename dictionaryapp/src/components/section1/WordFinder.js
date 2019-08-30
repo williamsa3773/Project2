@@ -2,6 +2,8 @@ import React from 'react'
 import axios from 'axios'
 import Form from  './Form'
 import Section1 from './Section1.css'
+require('dotenv').config()
+
 
 class WordFinder extends React.Component {
   constructor(props) {
@@ -14,7 +16,9 @@ class WordFinder extends React.Component {
   }
 
   dictApiCall = async () => {
-    const dictUrl = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${this.state.word}?key=097cb478-2f07-4d94-9e03-739c1ff1d6ab`
+    let key = process.env.REACT_APP_DICT_API_KEY
+    console.log(key)
+    const dictUrl = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${this.state.word}?key=${key}`
     const dictResponse = await axios.get(dictUrl)
     console.log(dictResponse)
     const dictData = dictResponse.data.map( (d, i) => {

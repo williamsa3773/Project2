@@ -105,7 +105,7 @@ footer {
     display: grid;
     grid-template-columns: .25fr 1.5fr .25fr;
     grid-template-rows: .2fr 2.6fr .2fr;
-    height: 100vh;
+    height: 100%;
     background-image: url('https://i.imgur.com/saFdErE.jpg');
     background-size: cover;
   }

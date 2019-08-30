@@ -37,10 +37,10 @@ class RandomWord extends React.Component {
       return (
        <>
          <div className='word2'>
-           <h3>{d.word}</h3>
+           <h4>{d.word}</h4>
          </div>
          <div className='sense2'>
-           <h4>({d.sense})</h4>
+           <h3>({d.sense})</h3>
          </div>
          <div className='def2'>
            <ul>{d.def.map((def, ind) => {
