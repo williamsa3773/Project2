@@ -35,26 +35,27 @@ class RandomWord extends React.Component {
   render() {
     let wordData = this.state.dictData.map((d,i) => {
       return (
-        <>
-          <div className='word2'>
-            <h1>{d.word} </h1>
-          </div>
-          <div className='sense2'>
-            <h2>({d.sense})</h2>
-          </div>
-          <div className='def2'>
-            <ul>{d.def.map((def, ind) => {
-              return (
-                <li key={ind}>{def}</li>
-              )})}
-            </ul>
-          </div>
-        </>
-      )})
+       <>
+         <div className='word2'>
+           <h3>{d.word}</h3>
+         </div>
+         <div className='sense2'>
+           <h4>({d.sense})</h4>
+         </div>
+         <div className='def2'>
+           <ul>{d.def.map((def, ind) => {
+             return (
+               <li key={ind}>{def}</li>
+             )
+           })}</ul>
+         </div>
+      </>
+     )
+   })
     return (
       <>
         <div className='header3'>
-          <p>header 3</p>
+          <h2>Random Word</h2>
         </div>
         <div className='form1'>
           <form onSubmit={this.handleSubmit}>

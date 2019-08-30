@@ -41,9 +41,11 @@ class WordOfTheDay extends React.Component {
   }
 
   reset() {
-    if (this.state.date.getSeconds() === 0) {
+    if (this.state.date.getMinutes() === 59 && this.state.date.getSeconds() === 59) {
       const word = wordArray[Math.floor(Math.random() * wordArray.length)]
-      console.log(word)
+      this.dictApiCall(word)
+    } else if (this.state.date.getMinutes() === 29 && this.state.date.getSeconds() === 59) {
+      const word = wordArray[Math.floor(Math.random() * wordArray.length)]
       this.dictApiCall(word)
     }
   }
@@ -53,35 +55,30 @@ class WordOfTheDay extends React.Component {
     this.timerId()
   }
 
-  componentWillUnmount() {
-    clearInterval(this.TimerId)
-  }
-
-
   render() {
     let wordData = this.state.dictData.map((d,i) => {
       return (
-        <>
-          <div className='word1'>
-            <h1>{d.word} </h1>
-          </div>
-          <div className='sense1'>
-            <h2>({d.sense})</h2>
-          </div>
-          <div className='def1'>
-            <ul>{d.def.map((def, ind) => {
-              return (
-                <li key={ind}>{def}</li>
-              )
-            })}</ul>
-          </div>
-        </>
-      )
-    })
+       <>
+         <div className='word1'>
+           <h4>{d.word}</h4>
+         </div>
+         <div className='sense1'>
+           <h3>({d.sense})</h3>
+         </div>
+         <div className='def1'>
+           <ul>{d.def.map((def, ind) => {
+             return (
+               <li key={ind}>{def}</li>
+             )
+           })}</ul>
+         </div>
+      </>
+     )
+   })
     return (
       <>
       <div className='header2'>
-        <h1>Word of the hour</h1>
+        <h2>Word of the hour</h2>
       </div>
       <div className='timer'>
         {this.state.date.toLocaleTimeString()}

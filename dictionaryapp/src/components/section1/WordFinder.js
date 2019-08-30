@@ -16,6 +16,7 @@ class WordFinder extends React.Component {
   dictApiCall = async () => {
     const dictUrl = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${this.state.word}?key=097cb478-2f07-4d94-9e03-739c1ff1d6ab`
     const dictResponse = await axios.get(dictUrl)
+    console.log(dictResponse)
     const dictData = dictResponse.data.map( (d, i) => {
       const data = {
         word: d.hwi.hw,
@@ -57,13 +58,13 @@ class WordFinder extends React.Component {
 
   render() {
       let wordData = this.state.dictData.map((d,i) => {
-       return (
+        return (
          <>
            <div className='word'>
-             <h1>{d.word}</h1>
+             <h3>{d.word}</h3>
            </div>
            <div className='sense'>
-             <h2>({d.sense})</h2>
+             <h4>({d.sense})</h4>
            </div>
            <div className='def'>
              <ul>{d.def.map((def, ind) => {
@@ -73,12 +74,13 @@ class WordFinder extends React.Component {
              })}</ul>
            </div>
         </>
-       )})
+       )
+     })
    return (
      <div className='container'>
       <div className='section1'>
         <div className='header'>
-          <p>Sample text here</p>
+          <h2>Word Search</h2>
         </div>
          <div className='form'>
            <Form onSubmit={this.handleSubmit}/>

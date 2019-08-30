@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://localhost:3000/random -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="shortcut icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="http://localhost:3000/logo192.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <style>body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+</style><style>@import url(https://fonts.googleapis.com/css?family=Amatic+SC|Caveat|Gloria+Hallelujah|Indie+Flower|Permanent+Marker|Shadows+Into+Light|Tangerine&display=swap);</style><style>/* font-family: 'Tangerine', cursive;
+font-family: 'Gloria Hallelujah', cursive;
+font-family: 'Indie Flower', cursive;
+font-family: 'Caveat', cursive;
+font-family: 'Shadows Into Light', cursive;
+font-family: 'Amatic SC', cursive;
+font-family: 'Permanent Marker', cursive; */
+a {
+  font-size: 20px;
+  margin: 7px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: wheat;
+}
+
+h1 {
+  font-size: 25px;
+  font-family: 'Amatic SC', cursive;
+  color: white;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 20px;
+  font-family: 'Amatic SC', cursive;
+  color: white;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 20px;
+  font-family: 'Caveat', cursive;
+  color: white;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: 20px;
+  font-family: 'Gloria Hallelujah', cursive;
+  color: white;
+  text-transform: uppercase;
+}
+
+ul {
+  font-size: 20px;
+  font-weight: 400px;
+  font-family: 'Indie Flower', cursive;
+  color: white;
+  text-transform: uppercase;
+}
+
+p {
+  color: white;
+  text-transform: uppercase;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: .25fr 1.5fr .25fr;
+  grid-template-rows: .2fr 2.6fr .2fr;
+  height: 100vh;
+  background-image: url('https://i.imgur.com/29hWVQY.jpg');
+  background-size: cover;
+}
+
+.nav {
+  grid-column: 2/3;
+  grid-row: 1/4;
+  text-decoration: none;
+  text-align: center;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+.container {
+  grid-column: 1/4;
+  grid-row: 2/3;
+}
+
+.form1 {
+  color: wheat;
+}
+
+footer {
+  grid-column: 1/4;
+  grid-row: 3/4;
+  text-align: center;
+}
+
+.footer {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  text-align: left;
+}
+
+.link {
+  grid-column: 3/4;
+  grid-row: 3/4;
+  text-align: right;
+}
+
+@media only screen and (max-width: 768px) {
+  .App {
+    display: grid;
+    grid-template-columns: .25fr 1.5fr .25fr;
+    grid-template-rows: .2fr 2.6fr .2fr;
+    height: 100vh;
+    background-image: url('https://i.imgur.com/saFdErE.jpg');
+    background-size: cover;
+  }
+
+  .nav {
+    grid-column: 2/3;
+    grid-row: 1/4;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Gloria Hallelujah', cursive;
+  }
+
+  .container {
+    grid-column: 1/4;
+    grid-row: 2/3;
+  }
+
+  .form1 {
+    color: wheat;
+  }
+
+  footer {
+    grid-column: 1/4;
+    grid-row: 3/4;
+    text-align: center;
+  }
+
+  .footer {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    text-align: left;
+  }
+
+  .link {
+    grid-column: 3/4;
+    grid-row: 3/4;
+    text-align: right;
+  }
+}
+</style><style>.section1 {
+  display: grid;
+  grid-template-columns: .2fr 1.8fr 1.8fr .2fr;
+  grid-template-rows: .2fr .2fr .2fr 1.4fr;
+}
+
+.header {
+  grid-column: 2/4;
+  grid-row: 1/2;
+  text-align: center;
+}
+
+.form {
+  grid-column: 2/4;
+  grid-row: 2/3;
+  display: flex;
+  justify-content: center;
+}
+
+.word {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  text-align: right;
+}
+
+.sense {
+  grid-column: 3/4;
+  grid-row: 3/4;
+}
+
+.def {
+  grid-column: 1/5;
+  grid-row: 4/5;
+}
+
+@media only screen and (max-width: 768px) {
+  .section1 {
+    display: grid;
+    grid-template-columns: .2fr 1.8fr 1.8fr .2fr;
+    grid-template-rows: .2fr .2fr .2fr 1.4fr;
+  }
+
+  .header {
+    grid-column: 2/4;
+    grid-row: 1/2;
+    text-align: center;
+  }
+
+  .form {
+    grid-column: 2/4;
+    grid-row: 2/3;
+    display: flex;
+    justify-content: center;
+  }
+
+  .word {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    text-align: right;
+  }
+
+  .sense {
+    grid-column: 3/4;
+    grid-row: 3/4;
+  }
+
+  .def {
+    grid-column: 1/5;
+    grid-row: 4/5;
+  }
+}
+</style><style>.section2 {
+  display: grid;
+  grid-template-columns: .75fr .75fr .75fr .75fr;
+  grid-template-rows: .3fr .3fr .3fr 2.1fr;
+}
+
+.header1 {
+  grid-column: 2/4;
+  grid-row: 1/2;
+  text-align: center;
+}
+
+.header2 {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  font-size: 10px;
+  text-align: center
+}
+
+.timer {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.header3 {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  text-align: center;
+}
+
+.form1 {
+  grid-column: 4/5;
+  grid-row: 2/3;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.word1 {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  text-align: right;
+}
+
+.sense1 {
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+
+.word2 {
+  grid-column: 3/4;
+  grid-row: 3/4;
+  text-align: right;
+}
+
+.sense2 {
+  grid-column: 4/5;
+  grid-row: 3/4;
+}
+
+.def1 {
+  grid-column: 1/3;
+  grid-row: 4/5;
+}
+
+.def2 {
+  grid-column: 3/5;
+  grid-row: 4/5;
+}
+
+@media only screen and (max-width: 768px) {
+  .section2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: .25fr .25fr .25fr 2fr .25fr .25fr 2fr;
+  }
+
+  .header1 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    text-align: center;
+  }
+
+  .header2 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    font-size: 10px;
+    text-align: center
+  }
+
+  .timer {
+    grid-column: 3/4;
+    grid-row: 2/3;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+
+  .header3 {
+    grid-column: 1/2;
+    grid-row: 5/6;
+    text-align: center;
+  }
+
+  .form1 {
+    grid-column: 3/4;
+    grid-row: 5/6;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+
+  .word1 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    text-align: right;
+  }
+
+  .sense1 {
+    grid-column: 3/4;
+    grid-row: 3/4;
+  }
+
+  .word2 {
+    grid-column: 1/2;
+    grid-row: 6/7;
+    text-align: right;
+  }
+
+  .sense2 {
+    grid-column: 3/4;
+    grid-row: 6/7;
+  }
+
+  .def1 {
+    grid-column: 1/3;
+    grid-row: 4/5;
+  }
+
+  .def2 {
+    grid-column: 1/3;
+    grid-row: 7/8;
+  }
+}
+</style><script charset="utf-8" src="./React App_files/main.6f8a09e63dfc1535835d.hot-update.js"></script></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div class="App"><div class="nav"><a href="http://localhost:3000/finder">Searching</a><a href="http://localhost:3000/random">Special</a></div><div class="container"><div class="section2"><div class="header1"><h1>Special Words</h1></div><div class="header2"><h2>Word of the hour</h2></div><div class="timer">8:53:32 AM</div><div class="word1"><h4>ob*du*rate</h4></div><div class="sense1"><h3>(adjective)</h3></div><div class="def1"><ul><li>stubbornly persistent in wrongdoing</li><li>hardened in feelings</li><li>resistant to persuasion or softening influences</li></ul></div><div class="header3"><h2>Random Word</h2></div><div class="form1"><form><input type="submit" value="Randomizing"></form></div><div class="word2"><h3>im*pe*ri*ous</h3></div><div class="sense2"><h4>(adjective)</h4></div><div class="def2"><ul><li>befitting or characteristic of one of eminent rank or attainments : commanding, dominant</li><li>marked by arrogant assurance : domineering</li><li>intensely compelling : urgent</li></ul></div></div></div><footer><div class="footer"><h1>Created by Andre Williams</h1></div><div class="link"><a href="https://github.com/williamsa3773">GitHub</a><a href="https://www.linkedin.com/in/andre-williams-37272118b/">LinkedIn</a></div></footer></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="./React App_files/bundle.js"></script><script src="./React App_files/0.chunk.js"></script><script src="./React App_files/main.chunk.js"></script><script src="./React App_files/main.a22469426ddc57068a2a.hot-update.js"></script>
+
+</body></html>
