@@ -12,7 +12,8 @@ class RandomWord extends React.Component {
     }}
 
   dictApiCall = async () => {
-    const dictUrl = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${this.state.Word}?key=097cb478-2f07-4d94-9e03-739c1ff1d6ab`
+    let key = process.env.REACT_APP_DICT_API_KEY
+    const dictUrl = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${this.state.word}?key=${key}`
     const dictResponse = await axios.get(dictUrl)
     const dictData = dictResponse.data.map( (d, i) => {
       const data = {

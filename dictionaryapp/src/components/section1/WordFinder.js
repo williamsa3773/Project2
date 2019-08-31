@@ -17,10 +17,8 @@ class WordFinder extends React.Component {
 
   dictApiCall = async () => {
     let key = process.env.REACT_APP_DICT_API_KEY
-    console.log(key)
     const dictUrl = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${this.state.word}?key=${key}`
     const dictResponse = await axios.get(dictUrl)
-    console.log(dictResponse)
     const dictData = dictResponse.data.map( (d, i) => {
       const data = {
         word: d.hwi.hw,
@@ -34,26 +32,10 @@ class WordFinder extends React.Component {
     })
   }
 
-  thesApiCall = async () => {
-    const thesUrl = `https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${this.state.word}?key=a9a12465-41f6-45eb-8960-4783f16d1b54`
-    const thesResponse = await axios.get(thesUrl)
-    console.log(thesResponse)
-    const thesData = thesResponse.data.map( (def, ind) => {
-      const data = {
-        ant: def.ants,
-        syn: def.syns
-      }
-      return data
-    })
-    this.setState({
-      thesData: thesData
-    })
-
-  }
-
   componentDidMount() {
     this.dictApiCall()
   }
+
   handleSubmit = (word) => {
     this.setState(prevState => ({
       word: word
